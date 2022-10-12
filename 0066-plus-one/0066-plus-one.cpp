@@ -24,16 +24,11 @@ public:
         }
         if(flag)
         {
-        //int r=digits[i]+1;
-        //digits.pop_back();
-        //digits.push_back(r);
-        //i++;
         while(i!=len)
         {
             digits.push_back(0);
             i++;
         }
-        //if(flag)digits.push_back(0);
         return digits;
         }
         x=digits[i]+1;
