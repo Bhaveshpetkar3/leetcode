@@ -2,7 +2,7 @@ class Solution {
 public:
     int removeElement(vector<int>& nums, int val) {
         int k=0;
-        int n=nums.size();
+        
         for(auto i=nums.begin();i<nums.end();i++)
         {
             if(*i==val)
@@ -12,6 +12,6 @@ public:
                 k++;
             }
         }
-        return n-k;
+        return nums.size();
     }
 };
