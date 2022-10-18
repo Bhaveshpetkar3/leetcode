@@ -19,25 +19,17 @@ public:
         }
         if(u==0)return true;
         unordered_map <char,int> mp1;
-        int y;
         for(auto i=mp.begin();i!=mp.end();i++)
         {
             mp1[i->second]++;
-        }
-        for(auto i=mp1.begin();i!=mp1.end();i++)
-        {
-            cout<<i->second<<" ";
         }
         if(mp1.size()>2 || mp1.size()==1)return false;
         auto itr=mp1.begin();
         auto itr2=mp1.begin();
         advance(itr2, 1);
-        // cout<<itr->first;
         if((itr->first==1 && itr->second==1) || (itr2->first==1 && itr2->second==1))return true;
-        if(abs(itr->first-itr2->first)>1)return false;
-        if(itr->second!=1 && itr2->second!=1)return false;
+        if((abs(itr->first-itr2->first)>1) || (itr->second!=1 && itr2->second!=1))return false;
         if(itr->second==1 && itr2->second==1)return true;
-        // cout<<itr->first;
         if(itr->first>itr2->first && itr->second>1)return false;
         if(itr->first<itr2->first && itr2->second>1)return false;
         return true;
