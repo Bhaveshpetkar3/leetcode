@@ -8,12 +8,8 @@ public:
          {
              if(s[i]=='(')
              {
-                 
-                    ctr++;
-                     
-                     maxi=max(ctr,maxi);
-                 
-                 
+                 ctr++;
+                 maxi=max(ctr,maxi);
              }
              else if(s[i]==')')
              {
@@ -22,7 +18,7 @@ public:
              }
              cout<<maxi<<" ";
          }
-        //if(ans==0)return 1;
+        
         return maxi;
     }
 };
