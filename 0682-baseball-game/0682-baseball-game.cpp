@@ -6,34 +6,38 @@ public:
         stack <int> stk;
         for(int m=0;m<operations.size();m++)
         {
-            
-            
-                if(operations[m][0]=='+')
-                {
+            char x= operations[m][0];
+           
+            switch(x)
+            {
+                case '+':
                     i=stk.top();
+                    //cout<<i<<" ";
                     stk.pop();
                     j=stk.top();
+                    //cout<<j<<" ";
                     stk.push(i);
                     stk.push(i+j);
-                }
-                else if(operations[m][0]=='D')
-                {   
-                   stk.push(stk.top()*2);   
-                }
-                else if(operations[m][0]=='C')stk.pop();
-                else
-                {
-                    
-                       stk.push(stoi(operations[m]));
-                }
-                    
-            
+                    break;
+                case 'D':
+                    i=stk.top();
+                    //cout<<i<<" ";
+                    stk.push(2*i);   
+                    break;
+                case 'C':
+                    stk.pop();
+                    break;
+                default:
+                    stk.push(stoi(operations[m]));
+            }
         }
         
         
         while(!stk.empty())
         {
-            ans += stk.top();
+            we=stk.top();
+            //cout<<we<<" ";
+            ans+=we;
             stk.pop();
             
         }
