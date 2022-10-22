@@ -14,7 +14,7 @@ public:
         for(int i=0;i<nums.size();i++)
         {
             sum+=nums[i];
-            if((sum-nums[i])==(pre-nums[i]))return i;
+            if(sum==pre)return i;
             pre-=nums[i];
         }
         return -1;
