@@ -6,7 +6,7 @@ public:
         {
             mpp[sentence[i]]++;
         }
-        if(mpp.size()<26)return false;
-        return true;
+        cout<<mpp.size();
+        return mpp.size()>=26;
     }
 };
