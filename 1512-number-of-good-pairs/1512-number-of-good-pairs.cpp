@@ -9,10 +9,7 @@ public:
         }
         for(auto i:mp)
         {
-            if(i.second>=2)
-            {
-                ans+=((i.second-1)*(i.second))/2;
-            }
+            ans+=i.second>=2 ? ((i.second-1)*(i.second))/2 : 0;
         }
         return ans;
     }
