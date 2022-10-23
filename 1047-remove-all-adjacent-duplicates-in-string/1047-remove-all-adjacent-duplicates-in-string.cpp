@@ -2,9 +2,8 @@
 public:
     string removeDuplicates(string s) {
         int n=s.size();
-        //cout<<n;
         stack <char> stk;
-        string ans="";
+        string ans;
         stk.push(s[0]);
         for(int i=1;i<n;i++)
         {
@@ -15,8 +14,6 @@ public:
             }
             stk.push(s[i]);
         }
-        //cout<<stk.size();
-        //if(stk.empty())return ans;
         while(!stk.empty())
         {
             ans+=stk.top();
