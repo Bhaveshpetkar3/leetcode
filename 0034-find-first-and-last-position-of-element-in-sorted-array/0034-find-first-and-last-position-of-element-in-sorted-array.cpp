@@ -11,7 +11,7 @@ public:
     while (r >= l) 
    {
         int mid = (l+r)/ 2;
-        
+        //cout<<"Hiiiii";
          if(arr[mid]==x)   
         {
             j=mid;
