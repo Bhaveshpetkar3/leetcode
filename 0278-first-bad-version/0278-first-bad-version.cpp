@@ -5,7 +5,7 @@ class Solution {
 public:
     int firstBadVersion(int n) {
         long long int l=1,r=n;
-        long long int ans=-1;
+        long long int ans;
         while(r>=l)
         {
             long long int mid=(l+r)/2;
