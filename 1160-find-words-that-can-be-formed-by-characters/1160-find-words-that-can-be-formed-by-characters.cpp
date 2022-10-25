@@ -2,7 +2,7 @@ class Solution {
 public:
     int countCharacters(vector<string>& words, string chars) {
         map <char,int> mp;
-        string ans="";
+        int ans=0;
         int j;
         for(int i=0;i<chars.size();i++)
         {
@@ -19,8 +19,8 @@ public:
                    }
                 else break;
             }
-            if(j==words[i].size())ans+=words[i];
+            if(j==words[i].size())ans+=words[i].size();
         }
-        return ans.size();
+        return ans;
     }
 };
