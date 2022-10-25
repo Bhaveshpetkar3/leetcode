@@ -13,7 +13,7 @@ public:
             map <char,int> mp1(mp);
             for(j=0;j<words[i].size();j++)
             {
-                if(mp1[words[i][j]]!=0)
+                if(mp1[words[i][j]])
                    {
                        mp1[words[i][j]]--;
                    }
