@@ -13,7 +13,6 @@ public:
                 if(mp2[i]==1)
                 {
                     count++;
-                    mp2[i]--;
                 }
             }
         }
