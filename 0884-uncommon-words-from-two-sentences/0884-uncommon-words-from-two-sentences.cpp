@@ -17,17 +17,17 @@ public:
             
         }
         a="";
-        for(int i=0;i<s2.size();i++)
+        for(char i : s2)
         {
-            if(s2[i]==' ')
+            if(i==' ')
             {
                 mp1[a]++;
                 a="";
-                continue;
+                
             }
-            a+=s2[i];
-             if(i==s2.size()-1)mp1[a]++;
+            else a+=i;
         }
+        mp1[a]++;
         for(auto i:mp1)
         {
            if(i.second==1)ans.push_back(i.first);
