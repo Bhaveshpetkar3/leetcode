@@ -2,7 +2,6 @@ class Solution {
 public:
     vector<string> uncommonFromSentences(string s1, string s2) {
         unordered_map <string,int> mp1;
-        unordered_map <string,int> mp2;
         vector <string> ans;
         string a="";
         for(int i=0;i<s1.size();i++)
@@ -22,21 +21,16 @@ public:
         {
             if(s2[i]==' ')
             {
-                mp2[a]++;
+                mp1[a]++;
                 a="";
                 continue;
             }
             a+=s2[i];
-             if(i==s2.size()-1)mp2[a]++;
+             if(i==s2.size()-1)mp1[a]++;
         }
-        //cout<<mp2["sour"];
         for(auto i:mp1)
         {
-           if(i.second==1 && mp2[i.first]==0)ans.push_back(i.first);
-        }
-         for(auto i:mp2)
-        {
-            if(i.second==1 && mp1[i.first]==0)ans.push_back(i.first);
+           if(i.second==1)ans.push_back(i.first);
         }
         return ans;
     }
