@@ -2,7 +2,7 @@ class Solution {
 public:
     bool sumOfNumberAndReverse(int num) {
         int r;
-        for(int i=0;i<=num;i++)
+        for(int i=num/2;i<=num;i++)
         {
             r=0;
             int s=i;
