@@ -5,12 +5,11 @@ public:
         string ans2="";
         for(auto i:s)
         {
-            if(i=='#')
+            if(i=='#' && !ans1.empty())
             {
-                if(ans1.size()==0)continue;
-                else ans1.pop_back();
+                ans1.pop_back();
             }
-            else
+            else if(i!='#')
                 ans1+=i;
         }
         for(auto i:t)
