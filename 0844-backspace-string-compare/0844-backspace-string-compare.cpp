@@ -14,12 +14,11 @@ public:
         }
         for(auto i:t)
         {
-            if(i=='#')
+            if(i=='#' && !ans2.empty())
             {
-                if(ans2.size()==0)continue;
-                else ans2.pop_back();
+                ans2.pop_back();
             }
-            else
+            else if(i!='#')
                 ans2+=i;
         }
         cout<<ans1<<" "<<ans2<<" ";
