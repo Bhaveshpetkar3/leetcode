@@ -11,12 +11,9 @@ public:
             }
             if(mp1.size()!=n)return false;
             mp1.clear();
-        }
-        for(int j=0;j<matrix[0].size();j++)
-        {
-            for(int i=0;i<matrix.size();i++)
+            for(int j=0;j<matrix.size();j++)
             {
-                mp1[matrix[i][j]]++;
+                mp1[matrix[j][i]]++;
             }
             if(mp1.size()!=n)return false;
             mp1.clear();
