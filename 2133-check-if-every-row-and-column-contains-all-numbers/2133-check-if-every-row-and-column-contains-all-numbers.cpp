@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool checkValid(vector<vector<int>>& matrix) {
-        map <int,int> mp1;
+        unordered_map <int,int> mp1;
         int n=matrix.size();
         for(int i=0;i<matrix.size();i++)
         {
