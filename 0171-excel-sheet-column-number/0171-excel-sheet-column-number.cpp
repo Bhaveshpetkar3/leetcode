@@ -3,9 +3,9 @@ public:
     int titleToNumber(string s) {
         int n=s.size()-1;
         int ans=0;
-        for(int i=0;i<s.size();i++)
+        for(auto i:s)
         {
-            ans+=pow(26,n--)*(s[i]-'A'+1);
+            ans+=pow(26,n--)*(i-'A'+1);
         }
         return ans;
     }
