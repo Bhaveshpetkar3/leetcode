@@ -4,14 +4,9 @@ public:
         map <int,char> mpp;
         int y;
         string ans="";
-        char a='A';
-        for(int i=0;i<26;i++)
-        {
-            mpp[i]=a++;
-        }
         while(n)
         {
-            ans+=mpp[(n-1)%26];
+            ans+=(n-1)%26+'A';
             n=(n-1)/26;
             
         }
