@@ -1,8 +1,6 @@
 class Solution {
 public:
     string convertToTitle(int n) {
-        map <int,char> mpp;
-        int y;
         string ans="";
         while(n)
         {
