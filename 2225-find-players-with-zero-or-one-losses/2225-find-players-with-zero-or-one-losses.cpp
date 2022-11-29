@@ -5,13 +5,8 @@ public:
         vector<vector<int>> ans(2);
         for(int i=0;i<matches.size();i++)
         {
-            for(int j=0;j<2;j++)
-            {
-                if(j==0)
-                mpp[matches[i][j]].first++;
-                if(j==1)
-                mpp[matches[i][j]].second++;
-            }
+                mpp[matches[i][0]].first++;
+                mpp[matches[i][1]].second++;
         }
         for (auto i :mpp)
         {
@@ -20,11 +15,7 @@ public:
                 ans[0].push_back(i.first);
                 continue;
             }
-            if((i.second).second==1)
-            {
-                ans[1].push_back(i.first);
-            }
-                
+            if((i.second).second==1) ans[1].push_back(i.first);
         }
         return ans;
     }
