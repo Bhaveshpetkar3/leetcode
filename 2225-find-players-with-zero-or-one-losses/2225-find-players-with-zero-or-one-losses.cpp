@@ -15,7 +15,8 @@ public:
                 ans[0].push_back(i.first);
                 continue;
             }
-            if((i.second).second==1) ans[1].push_back(i.first);
+            if((i.second).second==1) 
+            {ans[1].push_back(i.first);}
         }
         return ans;
     }
