@@ -9,9 +9,9 @@ public:
             if(i<target)minele++;
             if(i==target)targetcount++;
         }
-        while(q<targetcount)
+        while(targetcount--)
         {
-            ans.push_back(minele+q++);
+            ans.push_back(minele++);
         }
         return ans;
     }
