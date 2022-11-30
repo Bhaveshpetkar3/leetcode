@@ -8,7 +8,6 @@ public:
             m[i]++;
         }
         for(auto i:m)ans.insert(i.second);
-       if(m.size()==ans.size())return true;
-        return false;
+       return m.size()==ans.size();
     }
 };
