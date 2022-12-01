@@ -14,7 +14,7 @@ class Solution{
     {
       sort(arr,arr+n);
       int a=arr[0];
-      int ans1=1;
+      int ans1=INT_MIN;
       vector <int> ans;
       ans.push_back(arr[0]);
       for(int i=1;i<n;i++)
@@ -22,14 +22,15 @@ class Solution{
           if(arr[i]!=arr[i-1])ans.push_back(arr[i]);
       }
     int cnt=1;
-    for(int i=1;i<ans.size();i++)
+    for(int i=0;i<ans.size();i++)
     {
-        if(ans[i]==ans[i-1]+1)
+        if(i > 0 && ans[i]==ans[i-1]+1)
         {
             cnt++;
-            ans1=max(ans1,cnt);
+            
         }
         else cnt=1;
+        ans1=max(ans1,cnt);
     }
     return ans1;
     }
