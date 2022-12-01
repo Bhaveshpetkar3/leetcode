@@ -15,8 +15,8 @@ public:
         mpp['U']=1;
         for(int i=0;i<s.size()/2;i++)
         {
-            if(mpp[s[i]]==1)ctr1++;
-            if(mpp[s[i+s.size()/2]]==1)ctr2++;
+            if(mpp[s[i]])ctr1++;
+            if(mpp[s[i+s.size()/2]])ctr2++;
         }
     return ctr1==ctr2;
     }
