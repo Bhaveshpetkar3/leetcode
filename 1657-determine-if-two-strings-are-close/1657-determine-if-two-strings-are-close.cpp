@@ -8,7 +8,7 @@ public:
             mp1[w1[i]]++;
             mp2[w2[i]]++;
         }
-        //if(mp1.size()!=mp2.size())return false;
+        if(mp1.size()!=mp2.size())return false;
         for(auto i:mp1)
         {
             if(mp2.find(i.first)!=mp2.end())continue;
