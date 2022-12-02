@@ -1,23 +1,19 @@
 class Solution {
 public:
     bool closeStrings(string w1, string w2) {
-        if(w1.size()!=w2.size())return false;
-        unordered_map<char,int> mp1,mp2;
-        for(int i=0;i<w1.size();i++)
+        vector<int> v1(26,0),v2(26,0),v3(26,0),v4(26,0);
+        for(auto i:w1)
         {
-            mp1[w1[i]]++;
-            mp2[w2[i]]++;
+            v1[i-'a']++;
+            v3[i-'a']=1;
         }
-        if(mp1.size()!=mp2.size())return false;
-        for(auto i:mp1)
+        for(auto j :w2)
         {
-            if(mp2.find(i.first)!=mp2.end())continue;
-            else return false;
+            v2[j-'a']++;
+            v4[j-'a']=1;
         }
-        unordered_map<int,int> mp3,mp4;
-        for(auto i:mp1)mp3[i.second]++;
-        for(auto i:mp2)mp4[i.second]++;
-        if(mp3==mp4)return true;
-        return false;
+        sort(v1.begin(),v1.end());
+        sort(v2.begin(),v2.end());
+        return v1==v2&&v3==v4;
     }
 };
