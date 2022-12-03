@@ -4,7 +4,7 @@ public:
         int h=2;
         string a="1",b="1";
         //int a=0;
-        map<char,int> mp;
+        unordered_map<char,int> mp;
         mp[s[0]]=1;
         for(int i=1;i<s.size();i++)
         {
