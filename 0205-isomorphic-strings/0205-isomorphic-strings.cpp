@@ -21,6 +21,7 @@ public:
         mp[t[0]]=1;
         for(int i=1;i<t.size();i++)
         {
+            //if(a[i]!=b[i])return false;
             if(mp[t[i]])b+=to_string(mp[t[i]]);
             else
             {
