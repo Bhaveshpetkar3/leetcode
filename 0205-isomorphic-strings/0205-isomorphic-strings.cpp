@@ -9,7 +9,8 @@ public:
             if(a1[s[i]]!=a2[t[i]]) 
                 return false;
             a1[s[i]]=j;
-            a2[t[i]]=j++;
+            a2[t[i]]=j;
+            j++;
         }
         return true;
     }
