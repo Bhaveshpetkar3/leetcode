@@ -11,13 +11,8 @@ public:
         {
             sum1+=nums[i];
             if(i==n-1)mabs=sum1/j;
-            else mabs=abs((sum1/j)-((sum-sum1)/(n-j)));
-            if(mabs<small)
-            {
-                small=mabs;
-                abc=i;
-            }
-            j++;
+            else mabs=abs((sum1/j)-((sum-sum1)/(n-j++)));
+            if(mabs<small)small=mabs,abc=i;
         }
         return abc;
     }
