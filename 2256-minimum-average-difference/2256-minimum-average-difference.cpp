@@ -3,7 +3,7 @@ public:
     int minimumAverageDifference(vector<int>& nums) {
         vector<long long int> sum(nums.size());
         int n=nums.size();
-        if(n==1)return 0;
+        //if(n==1)return 0;
         sum[0]=nums[0];
         for(int i=1;i<nums.size();i++)
         {
