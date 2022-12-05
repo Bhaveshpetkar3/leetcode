@@ -12,8 +12,9 @@ public:
             {
                 sum+=pow((k%10),2);
                     k/=10;
-                cout<<sum<<" ";
+                
             }
+            cout<<sum<<" ";
             n=sum;
             mp[sum]++;
         }
