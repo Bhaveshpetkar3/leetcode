@@ -10,8 +10,8 @@ public:
             j=n-1;
             while(k<=j)
             {
-                m=image[i][k],l=image[i][j];
-                image[i][k]=!image[i][k];
+                l=image[i][j],m=image[i][k];
+                image[i][k]=!m;
                 image[i][j]=!l;
                 swap(image[i][j--],image[i][k++]);
             }
