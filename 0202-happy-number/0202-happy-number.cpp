@@ -2,7 +2,7 @@ class Solution {
 public:
     bool isHappy(int n) {
         map <int,int> mp;
-        //notice the word cycle in the 2nd line of the question
+        //notice the word cycle in the 2nd line of the question,so the value will repeat
         while(true)
         {
             int sum=0;
