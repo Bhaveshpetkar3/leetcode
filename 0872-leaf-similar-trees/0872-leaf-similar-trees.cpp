@@ -19,6 +19,7 @@ void postorder(TreeNode *root,vector<int> &qwe)
         postorder(root->right,qwe);
         if(root->left==NULL && root->right==NULL)qwe.push_back(root->val);
         }
+    return;
     }
     bool leafSimilar(TreeNode* root1, TreeNode* root2) {
         vector <int> ans1;
