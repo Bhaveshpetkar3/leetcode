@@ -15,9 +15,10 @@ void postorder(TreeNode *root,vector<int> &qwe)
     {
         if(root)
         {
+            if(root->left==NULL && root->right==NULL)qwe.push_back(root->val);
         postorder(root->left,qwe);
         postorder(root->right,qwe);
-        if(root->left==NULL && root->right==NULL)qwe.push_back(root->val);
+        
         }
     return;
     }
