@@ -16,10 +16,10 @@ public:
         if(head==NULL) return;
         mini = min(mini,head->val); 
         maxi = max(maxi,head->val);
-        //cout<<maxi;
+        //cout<<maxi<<" ";
         int a=abs(maxi-mini);
         ans = max(ans,a);
-        //cout<<ans;
+        //cout<<ans<<" ";
         preorder(head->left,mini,maxi);
         preorder(head->right,mini,maxi);
     }
