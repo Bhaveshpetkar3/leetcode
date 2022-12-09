@@ -12,16 +12,19 @@
 class Solution {
 public:
     int ans = 0;
-    void solve(TreeNode* root,int mn,int mx){
-        if(root==NULL) return;
-        mn = min(mn,root->val); 
-        mx = max(mx,root->val);
-        ans = max(ans,abs(mn-mx));
-        solve(root->left,mn,mx);
-        solve(root->right,mn,mx);
+    void preorder(TreeNode* head,int mini,int maxi){
+        if(head==NULL) return;
+        mini = min(mini,head->val); 
+        maxi = max(maxi,head->val);
+        //cout<<maxi;
+        int a=abs(maxi-mini);
+        ans = max(ans,a);
+        //cout<<ans;
+        preorder(head->left,mini,maxi);
+        preorder(head->right,mini,maxi);
     }
     int maxAncestorDiff(TreeNode* root) {
-        solve(root,root->val,root->val);
+        preorder(root,999999,0);
         return ans;
     }
 };
