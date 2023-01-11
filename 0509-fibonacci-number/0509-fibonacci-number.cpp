@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int fibo[40];
+    int fibo[31];
     int fib(int n) {
         if(n<=1)return n;
         if(fibo[n]!=0)return fibo[n];
