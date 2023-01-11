@@ -1,26 +1,14 @@
 class Solution {
 public:
-  int fib(int n)
-{
-     
-   
-    int f[n + 2];
-    int i;
- 
-    
-    f[0] = 0;
-    f[1] = 1;
- 
-    for(i = 2; i <= n; i++)
+    int sol(int n,vector<int> &dp)
     {
-         
-       
-       f[i] = f[i - 1] + f[i - 2];
+        if(n<=1)return n;
+        if(dp[n]!=-1)return dp[n];
+        dp[n]=sol(n-1,dp)+sol(n-2,dp);
+        return dp[n];
     }
-    return f[n];
-    }
-
     int climbStairs(int n) {
-        return fib(n+1);
+        vector <int> dp(n+3,-1);
+        return sol(n+1,dp);
     }
 };
