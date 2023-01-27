@@ -13,10 +13,7 @@ public:
                 if(mpp[s[i]]!=t[i])return false;
                 continue;
             }
-            if(mp1[t[i]]  )
-            {
-                return false;
-            }
+            if(mp1[t[i]])return false;
             mpp[s[i]]=t[i];
             mp1[t[i]]++;
         }
