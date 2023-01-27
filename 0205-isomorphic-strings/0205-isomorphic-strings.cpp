@@ -1,21 +1,25 @@
 class Solution {
 public:
     bool isIsomorphic(string s, string t) {
-        vector<int> a1(256,0);
-        vector<int> a2(256,0);
-        int j=2;
-        for(int i=0; i<s.size();i++)
+        if(s.length()==1)return true;
+        unordered_map <char,char> mpp;
+        unordered_map <char,char> mp1;
+        mpp[s[0]]=t[0];
+        mp1[t[0]]++;
+        for(int i=1;i<s.length();i++)
         {
-            if(a1[s[i]]!=a2[t[i]]) 
+            if(mpp[s[i]])
+            {
+                if(mpp[s[i]]!=t[i])return false;
+                continue;
+            }
+            if(mp1[t[i]]  )
+            {
                 return false;
-            a1[s[i]]=j;
-            a2[t[i]]=j;
-            j++;
+            }
+            mpp[s[i]]=t[i];
+            mp1[t[i]]++;
         }
         return true;
     }
 };
-// badc
-// baba
-// a1[b]=1
-// a2[b]=1
