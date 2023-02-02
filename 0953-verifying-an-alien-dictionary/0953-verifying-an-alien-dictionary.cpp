@@ -12,6 +12,11 @@ public:
             int j=0,k=0;
             while(j<prev.size() && k<curr.size())
             {
+                if(mpp[prev[j]]==mpp[curr[k]])
+                {
+                    j++,k++;
+                    continue;
+                }
                 if(mpp[prev[j]]>mpp[curr[k]])return false;
                 if(mpp[prev[j]]<mpp[curr[k]])break;
                 j++;
