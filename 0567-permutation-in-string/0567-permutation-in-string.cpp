@@ -1,26 +1,22 @@
 class Solution {
 public:
     bool checkInclusion(string s1, string s2) {
-        vector<int> freq(26,0);
-        for(auto i:s1)
+        int l1=s1.length();
+        int l2=s2.length();
+        if(l1>l2)return false;
+        vector<int> g1(26,0);
+        vector<int> g2=g1;
+        for(int i=0;i<l1;i++)
         {
-            freq[i-'a']++;
+            g1[s1[i]-'a']++;
+            g2[s2[i]-'a']++;
         }
-        //for(auto i:freq)cout<<i<<" ";
-        int i=0,j=s1.length()-1;
-        while(j<=s2.length()-1)
+        if(g1==g2)return true;
+        for(int i=l1;i<l2;i++)
         {
-            int k=i;
-            vector<int> temp=freq;
-            while(k<=j)
-            {
-                
-                if(temp[s2[k]-'a']==0)break;
-                temp[s2[k]-'a']--; 
-                k++;
-            }
-            if(k>j)return true;
-            i++;j++;
+            g2[s2[i-l1]-'a']--;
+            g2[s2[i]-'a']++;
+            if(g1==g2)return true;
         }
         return false;
     }
