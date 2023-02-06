@@ -42,8 +42,8 @@ void des(Node* s, int pos, long long int* ans){
             return;
         if(pos==0)
             *ans=*ans+s->data;
-        des(s->left,pos-1,ans);
-        des(s->right,pos+1,ans);
+        des(s->left,pos+1,ans);
+        des(s->right,pos-1,ans);
     }
  void find(Node* root, int target, vector<Node*> &v){
         if(root==NULL)
@@ -61,8 +61,8 @@ void des(Node* s, int pos, long long int* ans){
         if(v.empty()) return -1;
         long long int ans=0;
         for(Node* i:v){
-            des(i->left,-1,&ans);
-            des(i->right,1,&ans);
+            des(i->left,1,&ans);
+            des(i->right,-1,&ans);
         }
         return ans;
 
