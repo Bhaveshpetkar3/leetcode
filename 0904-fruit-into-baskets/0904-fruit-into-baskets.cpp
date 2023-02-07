@@ -4,15 +4,12 @@ public:
         int n=fruits.size();
         map<int,int> mpp;
         if(fruits.size()==1)return 1;
-        int pehlekalast=0;
-        int dusrekalast=0;
         int i=1,mx=0;
         int flag=1,ans=1;
         mpp[fruits[0]]++;
         pair<int,int> pehla,dusra;
         pehla.first=fruits[0];
         pehla.second=0;
-        //pehla.second=0,dusra.second=0;
         while(i<n)
         {
             while(i<n && mpp.size()<=2)
@@ -25,8 +22,7 @@ public:
                     else ans=dusra.second-pehla.second;
                     mpp[fruits[i-1]]++;
                     pehla.first=fruits[i-1];
-                    pehla.second=i-1;
-                    flag=1;
+                    pehla.second=i-1,flag=1;
                     break;
                 }
                 if(mpp.size()==2 && flag==1)
@@ -41,7 +37,6 @@ public:
                 mx=max(ans,mx);
                 i++;
             }
-            
         }
         return mx;
         }
