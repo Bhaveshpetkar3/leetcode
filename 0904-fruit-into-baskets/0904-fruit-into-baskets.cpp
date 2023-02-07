@@ -2,7 +2,7 @@ class Solution {
 public:
     int totalFruit(vector<int>& fruits) {
         int n=fruits.size();
-        map<int,int> mpp;
+        unordered_map<int,int> mpp;
         if(fruits.size()==1)return 1;
         int i=1,mx=0;
         int flag=1,ans=1;
