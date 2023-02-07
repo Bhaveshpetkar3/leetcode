@@ -1,43 +1,32 @@
+
 class Solution {
 public:
+
     int totalFruit(vector<int>& fruits) {
-        int n=fruits.size();
-        unordered_map<int,int> mpp;
-        if(fruits.size()==1)return 1;
-        int i=1,mx=0;
-        int flag=1,ans=1;
-        mpp[fruits[0]]++;
-        pair<int,int> pehla,dusra;
-        pehla.first=fruits[0];
-        pehla.second=0;
-        while(i<n)
+
+        unordered_map<int, int> mpp;
+
+        int i = 0, j = 0, res = 0;
+        
+        while(j < fruits.size())
         {
-            while(i<n && mpp.size()<=2)
+
+            mpp[fruits[j]]++;
+            
+            if(mpp.size() <= 2) res = max(res, j-i+1);
+            
+            else
             {
-                mpp[fruits[i]]++;
-                if(mpp.size()>2)
-                {
-                    mpp.clear();
-                    if(fruits[i-1]==pehla.first)ans=pehla.second-dusra.second;
-                    else ans=dusra.second-pehla.second;
-                    mpp[fruits[i-1]]++;
-                    pehla.first=fruits[i-1];
-                    pehla.second=i-1,flag=1;
-                    break;
-                }
-                if(mpp.size()==2 && flag==1)
-                {
-                    dusra.first=fruits[i];
-                    dusra.second=i;
-                    flag=0;
-                }
-                if(fruits[i]==pehla.first)pehla.second=i;
-                else dusra.second=i;
-                ans++;
-                mx=max(ans,mx);
+                mpp[fruits[i]]--;
+
+                if(mpp[fruits[i]] == 0) mpp.erase(fruits[i]);
+
                 i++;
             }
+
+            j++;
         }
-        return mx;
-        }
+
+        return j-i; 
+    }
 };
