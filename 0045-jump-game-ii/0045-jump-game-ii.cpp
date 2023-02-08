@@ -1,31 +1,47 @@
 class Solution {
 public:
-    int jump(vector<int>& nums) {
-        int jump=1;
-        int i=0,mx=INT_MIN;
-        int n=nums.size();
-        if(n==1)return 0;
-        if(nums[0]>=n-1)return 1;
+    int jump(vector<int>& n) {
+        if(n.size()==1) return 0;
+        int ct=1, maxi=0,curr=0,in=0;
+        cout<<n.size()-1<<endl;
+        if(n[0]>=n.size()-1)return 1;
         int mx_idx=0;
-        while(i<n-1)
-        {
-            if(i+nums[i]>=n-1)return jump+1;
-            int k=1,l=nums[i];
-            while(k<=l)
-           {
-               //mx=max(mx,k+nums[k+]+i);
-                if(mx<k+nums[k+i]+i)
-                {
-                    mx=k+nums[k+i]+i;
-                    mx_idx=k+i;
+        while(curr<n.size()-1){
+           
+            if(curr+n[curr]>=n.size()-1) {
+              
+                return ++ct;
+            }
+            
+            int frd=curr+1;
+            //ct++;
+            
+            while(in<n[curr]){
+                int x=frd+n[frd];
+                if(x>maxi){
+                    maxi=x;
+                    mx_idx=frd;
                 }
-               if(mx>=n-1)return jump+1;
-               k++;
-           }
-           jump++;
-           i=mx_idx;
-           mx=INT_MIN;
-           }
-        return jump;
+                    if(x>=n.size()-1){
+                        ct++;
+                     
+                          return ct;
+                    } 
+                    
+                    
+                    
+             
+                
+                frd++;
+                in++;
+                  
+            }
+            ct++;
+            curr=mx_idx;
+             in=0;
+            maxi=0;
+        
+        }
+        return ct;
     }
 };
