@@ -15,7 +15,7 @@ public:
             for(int j=i+1;j<26;j++)
             {
                 common=0;
-                for(auto k:mpp[j])if(mpp[i].count(k.first)==1)common++;
+                for(auto k:mpp[j])if(mpp[i].find(k.first)!=mpp[i].end())common++;
                 ans+=(mpp[i].size()-common)*(mpp[j].size()-common)*2;
             }
         }
