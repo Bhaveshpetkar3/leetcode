@@ -5,7 +5,7 @@ public:
         //int j=0;
         long long ans=0;
         int common=0;
-        for(auto i:ideas)mpp[i[0]-'a'][i.substr(1)]=1;
+        for(auto i:ideas)mpp[i[0]-'a'][i.substr(1,i.size()-1)]=1;
         //string a="offee";
         //cout<<mpp[2].size();
         //for(auto i: mpp[2])cout<<i.first<<" ";
