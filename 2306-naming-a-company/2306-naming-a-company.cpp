@@ -1,7 +1,7 @@
 class Solution {
 public:
     long long distinctNames(vector<string>& ideas) {
-        map<string,int> mpp[26];
+        unordered_map<string,int> mpp[26];
         //int j=0;
         long long ans=0;
         int common=0;
@@ -15,7 +15,7 @@ public:
             for(int j=i+1;j<26;j++)
             {
                 common=0;
-                for(auto k:mpp[j])if(mpp[i].count(k.first))common++;
+                for(auto k:mpp[j])if(mpp[i].count(k.first)==1)common++;
                 ans+=(mpp[i].size()-common)*(mpp[j].size()-common)*2;
             }
         }
