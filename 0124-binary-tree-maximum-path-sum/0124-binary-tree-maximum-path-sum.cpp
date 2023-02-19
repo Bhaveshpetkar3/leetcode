@@ -16,7 +16,7 @@ public:
         if(!root)return 0;
         int sumL=solve(root->left,ans);
         int sumR=solve(root->right,ans);
-        ans=max(ans,max(max((sumL+sumR+root->val),max(sumR+root->val,sumL+root->val)),root->val));
+        ans=max(ans,max(max(sumL+sumR,max(sumL,sumR))+root->val,root->val));
         // ans=max(ans,max(max(sumR+root->val,sumL+root->val),root->val));
         cout<<ans<<" ";
         return max(root->val,max(sumR+root->val,sumL+root->val));
