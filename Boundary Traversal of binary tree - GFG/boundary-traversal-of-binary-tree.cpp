@@ -129,19 +129,14 @@ public:
     vector <int> boundary(Node *root)
     {
         
-        vector <int> left,right,ans,leaf;
+        vector <int> ans;
         if(!root)return ans;
         ans.push_back(root->data);
         if(root->left==NULL && root->right==NULL)return ans;
-        leftt(root->left,left);
-        rightt(root->right,right);
-        //else rightt(root->left,right);
-        ///cout<<right.size();
-        //for(auto i: right)cout<<i<<"->";
-        solve(root,leaf);
-        for(auto i:left)ans.push_back(i);
-        for(int i=0;i<leaf.size();i++)ans.push_back(leaf[i]);
-        for(int i=0;i<right.size();i++)ans.push_back(right[i]);
+        leftt(root->left,ans);
+        solve(root,ans);
+        rightt(root->right,ans);
+        
         return ans;
     }
 };
