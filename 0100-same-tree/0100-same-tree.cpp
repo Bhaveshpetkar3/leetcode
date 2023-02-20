@@ -14,8 +14,8 @@ public:
     bool solve(TreeNode* p,TreeNode* q)
     {
        if(!p || !q)return p==NULL && q==NULL;
-       return(p->val == q->val) && solve(p->left,q->left) && solve(p->right,q->right);
-       //return false;
+       if(p->val == q->val) return solve(p->left,q->left) && solve(p->right,q->right);
+       return false;
     }
     bool isSameTree(TreeNode* p, TreeNode* q) {
         bool ans=solve(p,q);
