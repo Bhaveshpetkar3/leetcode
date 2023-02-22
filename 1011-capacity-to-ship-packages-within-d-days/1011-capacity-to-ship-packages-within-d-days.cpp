@@ -8,8 +8,13 @@ public:
             flag=1;
             int n=1,Size=0;
             for(int i=0;i<weights.size();i++){
-                if(weights[i]>mid) flag=0;
-                //continue;
+                if(weights[i]>mid)
+                {
+                    flag=0;
+                    i=weights.size();
+                    continue;
+                }
+                
                 Size+=weights[i];
                 if(Size>mid) 
                 {
