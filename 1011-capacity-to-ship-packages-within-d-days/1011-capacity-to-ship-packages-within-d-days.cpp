@@ -11,10 +11,8 @@ public:
                 if(weights[i]>mid)
                 {
                     flag=0;
-                    i=weights.size();
-                    continue;
+                    break;
                 }
-                
                 Size+=weights[i];
                 if(Size>mid) 
                 {
