@@ -6,7 +6,7 @@ public:
             l = max(l, i);
             r += i;
         }
-        l=0;
+        l-=1;
         int mid;bool flag;
         while(r>l+1){
             mid=(l+r)/2;
