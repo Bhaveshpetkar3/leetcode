@@ -1,7 +1,7 @@
 class Solution {
 public:
     int shipWithinDays(vector<int>& a, int b) {
-        int l=0,r=1000000;
+        int l=0,r=999999;
         while(r-1>l){
             int mid=(l+r)/2;
             bool check=1;
