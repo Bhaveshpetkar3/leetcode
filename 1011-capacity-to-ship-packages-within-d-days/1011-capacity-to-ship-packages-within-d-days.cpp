@@ -1,23 +1,24 @@
 class Solution {
 public:
-    int shipWithinDays(vector<int>& a, int b) {
+    int shipWithinDays(vector<int>& weights, int days) {
         int l=0,r=999999;
+        int mid;bool flag;
         while(r-1>l){
-            int mid=(l+r)/2;
-            bool check=1;
-            int days=1,tot=0;
-            for(int i=0;i<a.size();i++){
-                if(a[i]>mid) check=0;
+            mid=(l+r)/2;
+            flag=1;
+            int n=1,Size=0;
+            for(int i=0;i<weights.size();i++){
+                if(weights[i]>mid) flag=0;
                 //continue;
-                tot+=a[i];
-                if(tot>mid) 
+                Size+=weights[i];
+                if(Size>mid) 
                 {
-                    tot=a[i];
-                    days++;
+                    Size=weights[i];
+                    n++;
                 }
             }
-            if(days>b) check=false;
-            if(check) r=mid;
+            if(n>days) flag=false;
+            if(flag) r=mid;
             else l=mid;
         }
         return r;        
