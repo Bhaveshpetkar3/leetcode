@@ -1,8 +1,8 @@
 class Solution {
 public:
     int shipWithinDays(vector<int>& a, int b) {
-        int l=0,r=INT_MAX;
-        while(r>1+l){
+        int l=0,r=10000000;
+        while(r-1>l){
             int mid=(l+r)/2;
             bool check=1;
             int days=1,tot=0;
