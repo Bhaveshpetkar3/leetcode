@@ -8,7 +8,7 @@ public:
             int days=1,tot=0;
             for(int i=0;i<a.size();i++){
                 if(a[i]>mid) check=false;
-                //break;
+                //continue;
                 tot+=a[i];
                 if(tot>mid) tot=a[i],days++;
             }
