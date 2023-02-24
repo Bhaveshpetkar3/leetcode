@@ -15,10 +15,13 @@ public:
     {
         if(!rootl || !rootr)return rootl==NULL && rootr==NULL;
         if(rootl->val!=rootr->val)return false;
-        return solve(rootl->left,rootr->right)&solve(rootl->right,rootr->left);
+        bool l=solve(rootl->left,rootr->right);
+        bool r=solve(rootl->right,rootr->left);
+        return l&&r;
     }
     bool isSymmetric(TreeNode* root) {
         if(!root)return false;
-        return solve(root->left,root->right);
+        bool ans=solve(root->left,root->right);
+        return ans;
     }
 };
