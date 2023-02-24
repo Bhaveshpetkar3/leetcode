@@ -15,8 +15,7 @@ public:
     {
         if(!root)return 0;
         if(ans.size()==0)ans+=to_string(root->val);
-            else ans+="->"+to_string(root->val);
-        //ans+=to_string(root->val)+"->";
+        else ans+="->"+to_string(root->val);
         int left=solve(root->left,ans,soln);
         int right=solve(root->right,ans,soln);
         if(left==0 && right==0)soln.push_back(ans);
