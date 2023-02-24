@@ -106,16 +106,13 @@ class Solution {
         map<int,map<int,int>> jj;
         solve(root,jj,0,0);
         vector<int> ans;
-        int l=0;
-        //cout<<jj[1][3];
+        int l;
          for(auto i:jj)
          {
-             //ans.push_back(i[i.second]);
             for(auto j: i.second)l=j.second;
             ans.push_back(l);
          }
-         
-        return ans;
+         return ans;
     }
 };
 
