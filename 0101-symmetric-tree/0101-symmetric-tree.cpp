@@ -13,7 +13,7 @@ class Solution {
 public:
     bool solve(TreeNode* rootl,TreeNode* rootr)
     {
-        if(!rootl || !rootr)return rootl==NULL & rootr==NULL;
+        if(!rootl || !rootr)return rootl==NULL && rootr==NULL;
         if(rootl->val!=rootr->val)return false;
         return solve(rootl->left,rootr->right)&solve(rootl->right,rootr->left);
     }
