@@ -41,25 +41,19 @@ class Solution
 {
     public:
     //Function to return list containing elements of right view of binary tree.
+    void solve(Node* root,vector <int> &ans,int level)
+    {
+        if(!root)return;
+        if(level==ans.size())ans.push_back(root->data);
+        solve(root->right,ans,level+1);
+        solve(root->left,ans,level+1);
+        
+    }
     vector<int> rightView(Node *root)
     {
        // Your Code here
        vector <int> ans;
-        if(!root)return ans;
-        queue<Node*> q;
-        q.push(root);
-        while(!(q.empty()))
-        {
-            int n=q.size();
-            for(int i=0;i<n;i++)
-            {
-                Node* temp=q.front();
-                q.pop();
-                if(i==n-1)ans.push_back(temp->data);
-                if(temp->left)q.push(temp->left);
-                if(temp->right)q.push(temp->right);
-            }
-        }
+        solve(root,ans,0);
         return ans;
     }
 };
