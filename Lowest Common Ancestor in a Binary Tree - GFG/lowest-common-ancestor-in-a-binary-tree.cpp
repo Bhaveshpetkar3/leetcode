@@ -37,34 +37,16 @@ struct Node
 class Solution
 {
     public:
-    bool solve(Node* root,vector <Node*> &ans,int x)
-    {
-        if(!root)return 0;
-        ans.push_back(root);
-        if(root->data==x)return true;
-        bool left=solve(root->left,ans,x);
-        bool right=solve(root->right,ans,x);
-        if(left||right)return true;
-        ans.pop_back();
-        return false;
-        
-    }
     //Function to return the lowest common ancestor in a Binary Tree.
     Node* lca(Node* root ,int p ,int q )
     {
-       vector<Node*> ans;
-        solve(root,ans,p);
-        //for(auto i: ans)cout<<i->val<<" ";
-        vector <Node*> right;
-        solve(root,right,q);
-        for(int i=ans.size()-1;i>=0;i--)
-        {
-            for(int j=right.size()-1;j>=0;j--)
-            {
-                if(ans[i]->data==right[j]->data)return ans[i];
-            }
-        }
-        return root;
+       if(!root)return NULL;
+        if(root->data == p || root->data == q) return root; 
+        Node* left=lca(root->left,p,q);
+        Node* right=lca(root->right,p,q);
+        if(left && right)return root;
+        if(left)return left;
+        return right;
     }
 };
 
