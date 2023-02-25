@@ -101,7 +101,6 @@ class Solution{
         {
             if(left==0)
                 return right+1;
-            else 
                 return left+1;
         }
         return 1+min(left,right);
