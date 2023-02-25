@@ -1,13 +1,12 @@
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
-        int mino=INT_MAX;
-        int maxo=0;
-        for(auto i:prices)
+        int mini=INT_MAX,ans=0;
+        for(auto i: prices)
         {
-            mino=min(mino,i);
-            maxo=max(maxo,i-mino);
+            mini=min(mini,i);
+            ans=max(ans,i-mini);
         }
-        return maxo;
-       }
+        return ans;
+    }
 };
