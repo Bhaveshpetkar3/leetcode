@@ -17,13 +17,9 @@ public:
       string l=solve(root->left,ans,mpp);
       string r=solve(root->right,ans,mpp);
         string gg="hehe"+l + to_string(root->val) + r +"haha";
-        if(mpp[gg]!=-1)mpp[gg]++;
-        if(mpp[gg]>1)
-      {
-          ans.push_back(root);
-          mpp[gg]=-1;
-      }
-        return gg;
+        if(mpp[gg]==1)ans.push_back(root);
+        mpp[gg]++;
+return gg;
     }
     vector<TreeNode*> findDuplicateSubtrees(TreeNode* root) {
         vector <TreeNode*> ans;
