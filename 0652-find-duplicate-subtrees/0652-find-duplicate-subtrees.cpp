@@ -16,7 +16,7 @@ public:
         if(!root)return "";
       string l=solve(root->left,ans,mpp);
       string r=solve(root->right,ans,mpp);
-        string gg="(" + l + to_string(root->val) + r + ")";
+        string gg="hehe"+l + to_string(root->val) + r +"haha";
         if(mpp[gg]!=-1)mpp[gg]++;
         if(mpp[gg]>1)
       {
