@@ -11,7 +11,7 @@
  */
 class Solution {
 public:
-    string solve(TreeNode* root,vector <TreeNode*> &ans,map<string,int> &mpp)
+    string solve(TreeNode* root,vector <TreeNode*> &ans,unordered_map<string,int> &mpp)
     {
         if(!root)return "";
       string l=solve(root->left,ans,mpp);
@@ -23,7 +23,7 @@ return gg;
     }
     vector<TreeNode*> findDuplicateSubtrees(TreeNode* root) {
         vector <TreeNode*> ans;
-        map <string,int> mpp;
+        unordered_map <string,int> mpp;
         solve(root,ans,mpp);
         return ans;
     }
