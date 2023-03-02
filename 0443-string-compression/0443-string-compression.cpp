@@ -7,11 +7,7 @@ public:
         {
             a=chars[i];
             p=0;
-            while(i<chars.size() && chars[i]==a)
-            {
-                p++;
-                i++;
-            }
+            while(i<chars.size() && chars[i]==a)p++,i++;
             if(p==1)chars[y++]=a;
             else
             {
