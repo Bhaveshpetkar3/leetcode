@@ -1,7 +1,7 @@
 class Solution {
 public:
     long long minimumTime(vector<int>& time, int totalTrips) {
-        long long ans=0,low=1,high=99999999999999,mid,i=1;
+        long long ans=0,low=1,high=1e14,mid,i=1;
         while(low<=high)
         {
             mid=low+(high-low)/2;
