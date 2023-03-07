@@ -1,9 +1,7 @@
 class Solution {
 public:
     long long minimumTime(vector<int>& time, int totalTrips) {
-        long long ans=0,low=1,high=99999999999999,mid;
-        long long i=1;
-        sort(time.begin(),time.end());
+        long long ans=0,low=1,high=99999999999999,mid,i=1;
         while(low<=high)
         {
             mid=low+(high-low)/2;
