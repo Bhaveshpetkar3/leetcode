@@ -21,8 +21,8 @@ public:
                     int nrow=row+delrow;
                     int ncol=col+delcol;
                         if(nrow<0 || nrow>=n || ncol<0 || ncol>=m)ans++;
-                        else if((nrow>=0 && nrow<n && ncol>=0 && ncol<m ) && grid[nrow][ncol]==0)ans++;
-                        else if((nrow>=0 && nrow<n && ncol>=0 && ncol<m ) && !vis[nrow][ncol] && grid[nrow][ncol]==1)
+                        else if(grid[nrow][ncol]==0)ans++;
+                        else if(!vis[nrow][ncol])
                         {
                             vis[nrow][ncol]=1;
                             q.push({nrow,ncol});
