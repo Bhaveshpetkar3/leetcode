@@ -11,7 +11,7 @@
  */
 class Solution {
 public:
-    int solve(TreeNode* root,long long &ans,long long temp)
+    int solve(TreeNode* root,int &ans,int temp)
     {
         if(!root)return 0;
         //if(ans.size()==0)ans+=to_string(root->val);
@@ -23,8 +23,8 @@ public:
         return 1;
     }
     int sumNumbers(TreeNode* root) {
-        long long ans=0;
-        long long temp=0;
+        int ans=0;
+        int temp=0;
         solve(root,ans,temp);
         return ans;
     }
