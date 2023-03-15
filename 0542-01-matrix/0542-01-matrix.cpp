@@ -24,7 +24,6 @@ public:
             int r=q.front().first.first;
             int c=q.front().first.second;
             int step=q.front().second;
-            ans[r][c]=step;
             q.pop();
             for(int i=0;i<4;i++)
             {
@@ -33,7 +32,7 @@ public:
                 if(nrow<n && nrow>=0 && ncol<m && ncol>=0 && !vis[nrow][ncol])
                 {
                     vis[nrow][ncol]=1;
-                    
+                    ans[nrow][ncol]=step+1;
                     q.push({{nrow,ncol},step+1});
                 }
             }
