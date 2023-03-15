@@ -1,18 +1,29 @@
 class Solution {
 public:
-    void dfs(vector<vector<int>> &vis,int row,int col,vector<vector<char>>& grid)
+    void bfs(vector<vector<int>> &vis,int row,int col,vector<vector<char>>& grid)
     {
+        vis[row][col]=1;
+        queue<pair<int,int>> q;
+        q.push({row,col});
         int n=grid.size();
         int m=grid[0].size();
-        vis[row][col]=1;
-        int dx[]={-1,0,1,0};
-        int dy[]={0,-1,0,1};
-        for(int i=0;i<4;i++)
+        while(!q.empty())
         {
-            int nrow=dx[i]+row;
-            int ncol=dy[i]+col;
-            if(nrow>=0 && nrow<n && ncol>=0 && ncol<m && grid[nrow][ncol]=='1' && !vis[nrow][ncol])
-                dfs(vis,nrow,ncol,grid);
+            int row=q.front().first;
+            int col=q.front().second;
+            q.pop();
+            int dx[]={-1,0,1,0};
+            int dy[]={0,-1,0,1};
+            for(int i=0;i<4;i++)
+            {
+                    int nrow=row+dx[i];
+                    int ncol=col+dy[i];
+                    if(nrow>=0 && nrow<n && ncol>=0 && ncol<m && grid[nrow][ncol]=='1' && !vis[nrow][ncol])
+                    {
+                        q.push({nrow,ncol});
+                        vis[nrow][ncol]=1;
+                    }
+            }
         }
     }
     int numIslands(vector<vector<char>>& grid) {
@@ -27,7 +38,7 @@ public:
                 if(!vis[i][j] && grid[i][j]=='1')
                 {
                     ans++;
-                    dfs(vis,i,j,grid);
+                    bfs(vis,i,j,grid);
                 }
             }
         }
