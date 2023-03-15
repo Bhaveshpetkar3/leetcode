@@ -6,38 +6,6 @@ using namespace std;
 class Solution 
 {
     public:
-    //Function to find distance of nearest 1 in the grid for each cell.
-    // void bfs(vector<vector<int>> grid,vector<vector<int>> vis,int row,int col,vector<vector<int>> &ans)
-    // {
-    //     int n=grid.size();
-    //     int m=grid[0].size();
-    //     queue<pair<int,int>> q;
-    //     q.push({row,col});
-    //     int dx[]={-1,0,1,0};
-    //     int dy[]={0,-1,0,1};
-    //     while(!q.empty())
-    //     {
-    //         int r=q.front().first;
-    //         int c=q.front().second;
-    //         q.pop();
-    //     for(int i=0;i<4;i++)
-    //     {
-    //             int nrow=dx[i]+r;
-    //             int ncol=dy[i]+c;
-    //             if(nrow<n && nrow>=0 && ncol<m && ncol>=0 && !vis[nrow][ncol])
-    //             {
-    //                 vis[nrow][ncol]=1;
-    //                 if(grid[nrow][ncol]==1)
-    //                 {
-    //                 ans[row][col]=abs(row-nrow)+abs(col-ncol);
-    //                 return;
-    //                 }
-    //                 else q.push({nrow,ncol});
-    //             }
-    //     }   
-        
-    //     }
-    // }
 	vector<vector<int>>nearest(vector<vector<int>>grid)
 	{
 	    int n=grid.size();
@@ -63,7 +31,6 @@ class Solution
             int r=q.front().first.first;
             int c=q.front().first.second;
             int step=q.front().second;
-            ans[r][c]=step;
             q.pop();
             for(int i=0;i<4;i++)
             {
@@ -72,7 +39,7 @@ class Solution
                 if(nrow<n && nrow>=0 && ncol<m && ncol>=0 && !vis[nrow][ncol])
                 {
                     vis[nrow][ncol]=1;
-                    
+                    ans[nrow][ncol]=step+1;
                     q.push({{nrow,ncol},step+1});
                 }
             }
