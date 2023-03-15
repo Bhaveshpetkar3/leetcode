@@ -1,30 +1,12 @@
 class Solution {
 public:
-    void bfs(vector<vector<int>> &vis,vector<vector<char>> grid,int row,int col)
+    void bfs(vector<vector<int>> &vis,vector<vector<char>> &grid,int row,int col)
     {
         int n=grid.size();
         int m=grid[0].size();
         vis[row][col]=1;
         int dx[]={-1,0,1,0};
         int dy[]={0,-1,0,1};
-        queue<pair<int,int>> q;
-        q.push({row,col});
-        // while(!q.empty())
-        // {
-        //     int r=q.front().first;
-        //     int c=q.front().second;
-        //     q.pop();
-        //     for(int i=0;i<4;i++)
-        //     {
-        //         int nrow=row+dx[i];
-        //         int ncol=col+dy[i];
-        //         if(nrow<n && nrow>=0 && ncol<m && ncol>=0 && !vis[nrow][ncol] && grid[nrow][ncol]=='O')
-        //         {
-        //             vis[nrow][ncol]=1;
-        //             q.push({nrow,ncol});
-        //         }
-        //     }
-        // }
         for(int i=0;i<4;i++)
         {
             int nrow=row+dx[i];
