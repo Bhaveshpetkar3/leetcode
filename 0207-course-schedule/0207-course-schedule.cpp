@@ -4,7 +4,7 @@ public:
         int V=n;
         vector<int> adj[V];
         vector<int> indegree(n,0);
-        vector<int> ans;
+        //vector<int> ans;
         for(auto i: pre)
         {
             indegree[i[0]]++;
@@ -16,18 +16,19 @@ public:
 				q.push(i);
 			}
 		}
-		vector<int> topo;
+		//vector<int> topo;
+        int cnt=0;
 		while (!q.empty()) {
 			int node = q.front();
 			q.pop();
-			topo.push_back(node);
-
-			for (auto it : adj[node]) {
+			//topo.push_back(node);
+            cnt++;
+            for (auto it : adj[node]) {
 				indegree[it]--;
 				if (indegree[it] == 0) q.push(it);
 			}
 		}
-        if(topo.size()!=n)return 0;
+        if(cnt!=n)return 0;
         return 1;
 		//return topo;
     }
