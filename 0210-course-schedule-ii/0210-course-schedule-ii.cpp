@@ -4,7 +4,7 @@ public:
         int V=n;
         vector<int> adj[V];
         vector<int> indegree(n,0);
-        vector<int> ans;
+        //vector<int> ans;
         for(auto i: pre)
         {
             indegree[i[0]]++;
@@ -27,7 +27,7 @@ public:
 				if (indegree[it] == 0) q.push(it);
 			}
 		}
-        if(topo.size()!=n)return ans;
+        if(topo.size()!=n)return vector<int>();
 		return topo;
     }
 };
