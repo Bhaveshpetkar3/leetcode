@@ -13,33 +13,6 @@ class Solution{
         int V=n;
         vector<int> adj[K];
         vector<int> indg(K,0);
-        //int h=sizeof(dict[0])/sizeof(dict[0][0]);
-        //int v=dict[0].size();
-        //cout<<v<<endl;
-        //cout<<h<<endl;
-        // for(int i=0;i<n;i++)
-        // {
-        //     vector<int> vis(K,0);
-        //     int h=dict[i].size();
-        //     vis[dict[i][0]]=1;
-        //     for(int j=1;j<h;j++)
-        //     {
-        //         if(!vis[dict[i][j]])
-        //         {
-        //             vis[dict[i][j]]=1;
-        //             //cout<<(dict[i][j-1]-97)<<" ";
-        //             adj[(dict[i][j-1])-97].push_back((dict[i][j])-97);
-                    
-        //         }
-        //     }
-        // }
-        // //cout<<endl;
-        // for(int i=0;i<K;i++)
-        // {
-        //     for(auto j:adj[i])cout<<j<<" ";
-        //     cout<<endl;
-        // }
-        
         for(int i=0;i<n-1;i++)
         {
             int j=0,k=0;
@@ -53,25 +26,12 @@ class Solution{
             adj[(dict[i][j])-97].push_back((dict[i+1][k])-97);
             indg[dict[i+1][k]-97]++;
         }
-        //cout<<adj[].size();
-        // for(auto i:adj)
-        // {
-        // for(auto j:i)cout<<j<<" ";
-        // cout<<endl;
-        // }
-        //for(auto i:indegree)cout<<i<<" ";
-    //     for(int i=0;i<V;i++)
-	   //{
-	   //    for(auto it:adj[i])
-	   //    indg[it]++;
-	   //}
 	   queue<int> q;
 	   string ans="";
 	   for(int i=0;i<K;i++)
 	   {
 	       if(!indg[i])q.push(i);
 	   }
-	   //vector<int> ans;
 	   while(!q.empty())
 	   {
 	       int node=q.front();
@@ -85,8 +45,6 @@ class Solution{
 	       }
 	   }
 	   return ans;
-        string i="";
-        return i;
     }
 };
 
