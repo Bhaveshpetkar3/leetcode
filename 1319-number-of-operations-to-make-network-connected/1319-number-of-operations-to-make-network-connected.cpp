@@ -15,7 +15,6 @@ public:
         if(m<n-1)return -1;
         vector<int> vis(n,0);
         vector<int> adj[n];
-        //adj[0].push_back(1);
         for(auto i:c)
         {
             adj[i[1]].push_back(i[0]);
