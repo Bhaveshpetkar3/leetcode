@@ -1,18 +1,5 @@
 class Solution {
 public:
-    void dfs(vector<pair<int,bool>> adj[],vector<int> &vis,int &ans,int node)
-    {
-        vis[node]=1;
-        for(auto i:adj[node])
-        {
-            if(!vis[i.first])
-            {
-                if(i.second==1)ans++;
-                dfs(adj,vis,ans,i.first);
-            }
-            
-        }
-    }
     int minReorder(int n, vector<vector<int>>& c) {
         int m=c.size();
         vector<pair<int,bool>> adj[n];
@@ -23,7 +10,26 @@ public:
         }
         vector<int> vis(n,0);
         int ans=0;
-        dfs(adj,vis,ans,0);
+        vis[0]=1;
+        queue<int> q;
+        q.push(0);
+        while(!q.empty())
+        {
+            int h=q.size();
+            for(int i=0;i<h;i++)
+            {
+                int node=q.front();
+                q.pop();
+                for(auto l:adj[node])
+                {
+                    if(!vis[l.first]){
+                        if(l.second==1)ans++;
+                        q.push(l.first);
+                        vis[l.first]=1;
+                    }
+                }   
+            }
+        }
         return ans;
     }
 };
