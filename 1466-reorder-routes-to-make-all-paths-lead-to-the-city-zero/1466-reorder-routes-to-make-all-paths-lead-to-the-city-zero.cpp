@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void dfs(vector<pair<int,bool>> adj[],vector<int> &vis,int &ans,int node,int parent)
+    void dfs(vector<pair<int,bool>> adj[],vector<int> &vis,int &ans,int node)
     {
         vis[node]=1;
         for(auto i:adj[node])
@@ -8,7 +8,7 @@ public:
             if(!vis[i.first])
             {
                 if(i.second==1)ans++;
-                dfs(adj,vis,ans,i.first,node);
+                dfs(adj,vis,ans,i.first);
             }
             
         }
@@ -23,13 +23,7 @@ public:
         }
         vector<int> vis(n,0);
         int ans=0;
-        for(int i=0;i<n;i++)
-        {
-            if(!vis[i])
-            {
-                dfs(adj,vis,ans,i,n);
-            }
-        }
+        dfs(adj,vis,ans,0);
         return ans;
     }
 };
