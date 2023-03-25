@@ -34,14 +34,6 @@ public:
             totalnode-=ans[i];
             answ+=ans[i]*totalnode;
         }
-        // for(int i=0;i<7;i++)
-        // {
-        //     for(auto j:adj[i])
-        //     {
-        //         cout<<j<<" ";
-        //     }
-        //     cout<<endl;
-        // }
         return answ;
     }
 };
