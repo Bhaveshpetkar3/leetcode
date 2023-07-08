@@ -14,7 +14,7 @@ public:
         for(int i=k;i<n;i++)
         {
             mp[nums[i-k]]--;
-            if(mp[nums[i-k]]==0)mp.erase(nums[i-k]);
+            if(!mp[nums[i-k]])mp.erase(nums[i-k]);
             mp[nums[i]]++;
             sum-=nums[i-k];
             sum+=nums[i];
