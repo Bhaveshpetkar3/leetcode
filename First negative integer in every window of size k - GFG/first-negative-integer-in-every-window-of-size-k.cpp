@@ -32,18 +32,18 @@ int main() {
 vector<long long> printFirstNegativeInteger(long long int arr[],
                                              long long int n, long long int k) {
                               
-         queue <pair<int,int>> q;
+         queue <int> q;
 	int i=0,j=0;
 	vector<long long>ans;
 	while(j<n)
 	{
 		if(arr[j]<0)
-			q.push({arr[j],j});
+			q.push(arr[j]);
 		if(j-i+1==k)
 		{
             if (!q.empty()) {
-                ans.push_back(q.front().first);
-                if (q.front().second == i)
+                ans.push_back(q.front());
+                if (q.front() == arr[i])
                     q.pop();
             }
 			else ans.push_back(0);
