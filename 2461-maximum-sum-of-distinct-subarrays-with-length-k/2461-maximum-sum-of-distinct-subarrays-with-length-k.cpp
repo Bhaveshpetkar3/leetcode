@@ -5,20 +5,20 @@ public:
         unordered_map<long long,long long> mp;
         long long sum=0,ans=0;
         int n=nums.size();
-        for(int i=0;i<k;i++)
+        int i=0,j=0;//i for denoting the starting index of sliding window and j for the ending index of sliding window
+        while(j<n)
         {
-            mp[nums[i]]++;
-            sum+=nums[i];
-        }
-        if(mp.size()==k)ans=sum;
-        for(int i=k;i<n;i++)
-        {
-            mp[nums[i-k]]--;
-            if(!mp[nums[i-k]])mp.erase(nums[i-k]);
-            mp[nums[i]]++;
-            sum-=nums[i-k];
-            sum+=nums[i];
-            if(mp.size()==k)ans=max(ans,sum);
+            sum+=nums[j];
+            mp[nums[j]]++;
+            if(j-i+1==k)
+            {
+                if(mp.size()==k)ans=max(ans,sum);
+                sum-=nums[i];
+                mp[nums[i]]--;
+                if(!mp[nums[i]])mp.erase(nums[i]);
+                i++;
+            }
+            j++;
         }
         return ans;
     }
