@@ -18,10 +18,7 @@ while(j<n)
 {
     mp[s[j]]++;
 	if(mp.size()==k)
-	{
-	    //cout<<i<<" "<<j<<endl;
-		ans=max(ans,j-i+1);
-	}
+    	ans=max(ans,j-i+1);
 	else
 	{
 		if(mp.size()>k)
@@ -36,7 +33,6 @@ while(j<n)
 		    i++;
 		}
 	}
-	
 	j++;
 }
 return ans;
