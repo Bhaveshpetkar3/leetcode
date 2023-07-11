@@ -6,7 +6,6 @@ public:
         for(auto i: arr)g+=i;      
         int k=g-x;
         if(x>g)return -1;
-        if(!k)return n;
         int i=0,j=0;
         int ans=INT_MIN;
         long long sum=0;
