@@ -1,12 +1,5 @@
 class Solution {
 public:
-//     int solve(int r,int c,vector<vector<int>> &dp,vector<vector<int>> &grid,int n)
-// {
-//     if(r<0 or c<0 or c>=n)return INT_MAX;
-//     if(dp[r][c]!=-1)return dp[r][c];
-//     if(r==0)return dp[r][c]=grid[r][c];
-//     return dp[r][c]=min(solve(r-1,c,dp,grid,n),min(solve(r-1,c-1,dp,grid,n),solve(r-1,c+1,dp,grid,n)))+grid[r][c];
-// }
     int minFallingPathSum(vector<vector<int>>& grid) 
     {
         int n=grid.size();
